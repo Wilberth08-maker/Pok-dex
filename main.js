@@ -49,6 +49,7 @@ async function getPokemonDetails(pokemonUrl) {
         const response = await fetch(pokemonUrl);
         const data = await response.json();
         return {
+            id: data.id,
             name: data.name,
             image: data.sprites.front_default,
             types: data.types.map(t => t.type.name),
@@ -101,6 +102,7 @@ function renderPokemons(pokemons) {
         cards.innerHTML = `  
             <img class="character-image" src="${pokemon.image}" alt="${pokemon.name}" />
             <div id="text-cards">
+            <h2>ID: #${pokemon.id}</h2>
             <h2>${capitalize(pokemon.name)}</h2>
             <p style="font-size: 1.2rem;"> Types: ${pokemon.types.join(", ")}</p>
             <p style="font-size: 1.2rem;"> Abilities: ${pokemon.abilities.join(", ")}</p>
