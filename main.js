@@ -128,7 +128,7 @@ function renderPokemons(pokemons) {
 // Deshabilitación de botones
 function updateButtons(){
     prevButtons.forEach(btn => btn.disabled = (offset === 0));
-    nextButtons.forEach(btn => btn.disabled = (offset >= 1280));
+    nextButtons.forEach(btn => btn.disabled = (offset >= 1300));
 }
 
 // Cargar y renderizar los pokemones
